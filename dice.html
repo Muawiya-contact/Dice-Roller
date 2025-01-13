@@ -4,66 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Dice Roller</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: url('casino-table.png') no-repeat center center/cover;
-      color: #ffffff;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      position: relative;
-    }
-
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* Slight overlay for text readability */
-      z-index: -1;
-    }
-
-    .container {
-      margin-top: 50px;
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .dice img {
-      width: 150px;
-      height: 150px;
-      margin: 20px auto;
-      transition: transform 0.3s;
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    #result {
-      margin-top: 20px;
-      font-size: 1.2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -75,32 +16,6 @@
     <p id="result">Click the button to roll the dice!</p>
   </div>
 
-  <script>
-    // Select elements
-    const diceImage = document.getElementById("diceImage");
-    const rollButton = document.getElementById("rollButton");
-    const resultText = document.getElementById("result");
-
-    // Function to roll the dice
-    function rollDice() {
-      // Generate a random number between 1 and 6
-      const diceRoll = Math.floor(Math.random() * 6) + 1;
-
-      // Update the dice image
-      diceImage.src = `dice-${diceRoll}.png`;
-
-      // Update the result text
-      resultText.textContent = `You rolled a ${diceRoll}!`;
-
-      // Add a quick animation
-      diceImage.style.transform = "rotate(360deg)";
-      setTimeout(() => {
-        diceImage.style.transform = "rotate(0deg)";
-      }, 300);
-    }
-
-    // Add event listener to the button
-    rollButton.addEventListener("click", rollDice);
-  </script>  
+  <script src="script.js"></script>
 </body>
 </html>
